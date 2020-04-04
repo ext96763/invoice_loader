@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <title>Users</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+          integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/favicon.ico" rel="shortcut icon">
+</head>
+<body>
+<div class="col-md-6">
+    <form enctype="multipart/form-data" method="POST" th:action="@{/upload-file}" th:object="${date}"
+          th:object1="${datatype}">
+        <div class="form-group files color">
+            <label style="color:black;text-align:center; padding: 1rem">Nahrat data </label>
+            <input class="form-control" name="uploadingFiles" type="file"></input>
+
+            <div class="container">
+                <h class="page-header">Vyber typu dat</h>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <select class="form-control" id="datatype" name="datatype">
+                            <option value="bj">BjData</option>
+                            <option value="tmobile">TMobileData</option>
+                        </select>
+                    </div>
+                </div>
+                <br/>
+                <div>
+                    <label class="control-label" for="date" style="margin: auto; padding: 1rem; color:black">Datum
+                        nahrani
+                        excelu</label>
+                    <input class="form-control" id="date" name="date" placeholder="MM/YYYY"
+                           style="margin: auto; padding: auto"
+                           type="text"></input>
+                    <button class="btn btn-success" style="margin-top: 1.5rem; padding: 1rem" type="submit">Nahrat data
+                        do Aplikace
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
